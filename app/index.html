@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--[if lt IE 9]>
+    	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ng-controller="myAppCtrl" ng-class="selectedTheme">
+    <div class="switch-theme">
+        <label>
+            <input type=radio name="theme" ng-model="selectedTheme" value="{{themes[0].value}}">
+            {{ themes[0].name }}
+        </label>
+        <label>
+            <input type=radio name="theme" ng-model="selectedTheme" value="{{themes[1].value}}">
+            {{ themes[1].name }}
+        </label>
+    </div>
+
+    <div class="box">
+        <div class="control">
+            <select ng-model="mode" ng-options="item.op for item in operations track by item.val"></select> value by <select ng-model="selected" ng-options="item.per for item in items track by item.val"></select> %
+        </div>
+        <input class="value-input" ng-model="num" ng-focus="clear()">
+        <div ng-switch on="mode.val">
+            <h1 class="output" ng-switch-when="decrease">{{ num * selected.val | number:1 }}</h1>
+            <h1 class="output" ng-switch-when="increase">{{ num * (1 + selected.val2 / 100) | number:1 }}</h1>
+        </div>
+    </div>
+
+    <a href="#" class="github-lnk">Fork me on Github</a>
+</body>
+</html>

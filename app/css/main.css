@@ -1,0 +1,135 @@
+body {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 300px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.control {
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+.output {
+    margin: 0;
+    font-size: 150px;
+    font-weight: 700;
+}
+
+.value-input {
+    max-width: 120px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    background: none;
+    border: 2px solid lightgrey;
+    outline: none;
+    text-align: center;
+    color: inherit;
+}
+
+.switch-theme label {
+    cursor: pointer;
+    margin-right: 15px;
+    color: gray;
+}
+
+
+input[type=radio] {
+    margin-right: 5px;
+}
+
+.github-lnk {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    line-height: 22px;
+    color: gray;
+}
+
+.github-lnk:after {
+    content: '';
+    display: block;
+    background-color: lightgrey;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transition: width 0.5s, background-color 1s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.github-lnk:hover:after {
+    width: 100%;
+}
+
+/* Themes */
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+/* Media */
+
+@media (max-width: 480px) and (orientation: portrait){
+    body {
+        text-align: center;
+    }
+    .output {
+        margin: 0;
+        font-size: 60px;
+    }
+    .control {
+        line-height: 32px;
+        font-size: 16px;
+    }
+
+    .github-lnk {
+        display: none;
+    }
+}
+
+@media (max-width: 736px) and (orientation: landscape){
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        min-width: 450px;
+    }
+
+    .control {
+        margin-bottom: 0;
+        margin-right: 20px;
+        line-height: 32px;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .value-input {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .output {
+        font-size: 60px;
+    }
+
+    .github-lnk {
+        display: none;
+    }
+}

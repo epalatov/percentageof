@@ -1,0 +1,21 @@
+{
+  "name": "empty_project",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Eugene Rzhavtsev <eugenerzhavtsev@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-css": "^7.0.0",
+    "html5shiv": "^3.7.3"
+  }
+}
